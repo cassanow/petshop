@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using petshop.Data;
+using petshop.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<AppDbContext>(
-    options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));  
+    options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddTransient<IUserRepository, UserRepository>();
 
 var app = builder.Build();
 
