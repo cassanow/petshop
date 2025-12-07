@@ -12,11 +12,13 @@ public class AuthController : Microsoft.AspNetCore.Mvc.Controller
 {
     private readonly IUserRepository _repository;
     private readonly IPasswordService _passwordService;
+    private readonly ITokenService _tokenService;
 
-    public AuthController(IUserRepository repository, IPasswordService passwordService)
+    public AuthController(IUserRepository repository, IPasswordService passwordService,  ITokenService tokenService)
     {
         _repository = repository;
         _passwordService = passwordService;
+        _tokenService = tokenService;
     }
     
     [HttpPost("login")]
@@ -35,7 +37,9 @@ public class AuthController : Microsoft.AspNetCore.Mvc.Controller
         if(user.Password != login.Password && user.Email != login.Email)
             return Unauthorized();
         
-        return Ok(user);
+        var token = _tokenService.GenerateToken(user);
+        
+        return Ok(new { token = token, user = user.Name });
     }
 
     [HttpPost("register")]
