@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Montserrat;
+     line-height: 2;
+     color: #ffffff;
+     background: #000000;
+     font-weight: 300;
+}
+
+header {
+     padding: 0.5rem 0;
+     width: 100%;
+     top: 0;
+     z-index: 1000;
+     background: #000000;
+ }
+
+ nav {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     max-width: 1400px;
+     margin: 0 auto;
+     padding: 0 4rem;
+ }
+
+ nav .logo {
+     font-size: 2rem;
+     font-weight: 300;
+     letter-spacing: 4px;
+ }
+
+
+ .nav-links {
+     display: flex;
+     list-style: none;
+     gap: 4rem;
+ }
+
+ .nav-links a {
+     color: #ffffff;
+     text-decoration: none;
+     font-size: 0.75rem;
+     letter-spacing: 2px;
+     transition: opacity 0.3s;
+ }
+
+ .nav-links a:hover {
+     opacity: 0.5;
+ }
+
+
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    border-right: 1px solid #111;
+    padding: 4rem 4rem;
+}
+
+.login-box {
+    width: 50%;
+}
+
+
+h1 {
+    font-size: 3rem;
+    font-weight: 200;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #8b8b8b;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    opacity: 0.9;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 1.5rem 0;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    background: transparent;
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: 300;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-bottom-color: #ffffff;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    font-size: 0.85rem;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    color: #666;
+    cursor: pointer;
+}
+
+.forgot-link {
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.forgot-link:hover {
+    opacity: 1;
+}
+
+.btn {
+    width: 100%;
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff7a;
+    padding: 1rem 2.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.btn:hover {
+    border-color: #ffffff;
+}
+
+
+.signup-link {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.signup-link a {
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.signup-link a:hover {
+    opacity: 1;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.hero-text h2 {
+    font-size: 2.5rem;
+    font-weight: 200;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.hero-text p {
+    font-size: 1rem;
+    color: #999;
+}
+
+@media (max-width: 968px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .right-section {
+        display: none;
+    }
+
+    .left-section {
+        border-right: none;
+    }
+}

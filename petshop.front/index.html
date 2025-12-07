@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetCare</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon"  href="img/favicon.ico"/>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">PETCARE</div>
+            <ul class="nav-links">
+                <li><a href="#servicos">SERVIÇOS</a></li>
+                <li><a href="#produtos">PRODUTOS</a></li>
+                <li><a href="#contato">CONTATO</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Cuidado essencial<br>para seu pet</h1>
+    </section>
+
+    <section id="servicos">
+        <h2>SERVIÇOS</h2>
+        <div class="servicos-grid">
+            <div class="servicos-card">
+                <h3>Banho & Tosa</h3>
+                <p>Cuidado profissional com produtos premium para deixar seu pet limpo, 
+                    cheiroso e bem cuidado. Oferecemos banho completo, 
+                    tosa higiênica e estética, escovação, corte de unhas e 
+                    limpeza de ouvidos. Ambiente seguro e confortável com profissionais qualificados. Seu pet merece o melhor tratamento.</p>
+            </div>
+            <div class="servicos-card">
+                <h3>Veterinário</h3>
+                <p>Atendimento veterinário completo com equipamentos modernos e profissionais experientes. Realizamos consultas, vacinação, exames laboratoriais, cirurgias e atendimento de emergência. Cuidamos da saúde do seu pet com dedicação e carinho. Prevenção e tratamento em um só lugar.</p>
+            </div>
+            <div class="servicos-card">
+                <h3>Hotel</h3>
+                <p>Hospedagem confortável e segura para seu pet durante suas viagens ou compromissos. Ambiente climatizado, suítes individuais, alimentação controlada e recreação supervisionada. Monitoramento 24 horas com equipe qualificada. Seu pet em boas mãos enquanto você está fora.</p>
+            </div>
+            <div class="servicos-card">
+                <h3>Adestramento</h3>
+                <p>Treinamento profissional para melhorar o comportamento e obediência do seu pet. Ensinamos comandos básicos, socialização, correção de problemas comportamentais e truques avançados. Métodos positivos e eficazes com resultados comprovados. Transforme a convivência com seu melhor amigo.</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="produtos">
+        <h2>PRODUTOS</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image"><img src="img/racao.png" alt=""></div>
+                <div class="product-info">
+                    <h3>Ração Premium</h3>
+                    <div class="product-price">R$ 89,90</div>
+                    <button class="btn btn-add" data-produto="Ração Premium">ADICIONAR</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image"><img src="img/brinquedos.png" alt=""></div>
+                <div class="product-info">
+                    <h3>Brinquedo</h3>
+                    <div class="product-price">R$ 45,90</div>
+                    <button class="btn btn-add" data-produto="Brinquedo">ADICIONAR</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image"><img src="img/cama.png" alt=""></div>
+                <div class="product-info">
+                    <h3>Caminha</h3>
+                    <div class="product-price">R$ 129,90</div>
+                    <button class="btn btn-add" data-produto="Caminha">ADICIONAR</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image"><img src="img/higiene.png" alt=""></div>
+                <div class="product-info">
+                    <h3>Kit Higiene</h3>
+                    <div class="product-price">R$ 59,90</div>
+                    <button class="btn btn-add" data-produto="Kit Higiene">ADICIONAR</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <h2>CONTATO</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label>NOME</label>
+                <input type="text" required>
+            </div>
+            <div class="form-group">
+                <label>TELEFONE</label>
+                <input type="email" required>
+            </div>
+            <div class="form-group">
+                <label>MENSAGEM</label>
+                <textarea required></textarea>
+            </div>
+            <button type="submit" class="btn">ENVIAR</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>PETCARE — EXTREMA, MG</p>
+    </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3 id="modalMessage"></h3>
+            <button class="btn btn-close">FECHAR</button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
