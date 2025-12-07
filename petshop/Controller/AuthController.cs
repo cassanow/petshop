@@ -2,6 +2,7 @@
 using petshop.DTO;
 using petshop.Model;
 using petshop.Repository;
+using petshop.Service;
 
 namespace petshop.Controller;
 
@@ -10,10 +11,12 @@ namespace petshop.Controller;
 public class AuthController : Microsoft.AspNetCore.Mvc.Controller
 {
     private readonly IUserRepository _repository;
+    private readonly IPasswordService _passwordService;
 
-    public AuthController(IUserRepository repository)
+    public AuthController(IUserRepository repository, IPasswordService passwordService)
     {
         _repository = repository;
+        _passwordService = passwordService;
     }
     
     [HttpPost("login")]
@@ -22,6 +25,11 @@ public class AuthController : Microsoft.AspNetCore.Mvc.Controller
         var user = await _repository.GetByEmail(login.Email);
         
         if (user == null)
+            return Unauthorized();
+        
+        var valid = _passwordService.VerifyPassword(user.Password, login.Password);
+        
+        if (!valid)
             return Unauthorized();
         
         if(user.Password != login.Password && user.Email != login.Email)
@@ -39,7 +47,7 @@ public class AuthController : Microsoft.AspNetCore.Mvc.Controller
         var response = new User
         {
             Email = user.Email,
-            Password = user.Password,
+            Password = _passwordService.HashPassword(user.Password),
             Name = user.Name,
             Telefone = user.Telefone,
         };
