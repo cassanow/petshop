@@ -57,6 +57,6 @@ public class AuthController : Microsoft.AspNetCore.Mvc.Controller
         };
         
         await _repository.Create(response);
-        return Ok(user);
+        return Ok(response);
     }
 }
