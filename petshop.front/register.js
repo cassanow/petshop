@@ -8,7 +8,7 @@ document.getElementById("confirmar").addEventListener("click", async () => {
         const response = await fetch("https://petzcare-api.onrender.com/api/Auth/register", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ nome: nome, email: email, telefone: telefone, senha: senha })
+            body: JSON.stringify({ name: nome, email: email, telefone: telefone, password: senha })
         })
 
         const data = await response.json()
