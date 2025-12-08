@@ -1,4 +1,4 @@
-// Adicionar ao carrinho
+
 document.querySelectorAll(".btn-add").forEach((btn) => {
   btn.addEventListener("click", function () {
     const produto = this.getAttribute("data-produto");
@@ -8,12 +8,11 @@ document.querySelectorAll(".btn-add").forEach((btn) => {
   });
 });
 
-// Fechar modal
 document.querySelector(".btn-close").addEventListener("click", function () {
   document.getElementById("modal").style.display = "none";
 });
 
-// Formulário de contato
+
 document.getElementById("contactForm").addEventListener("submit", function (e) {
   e.preventDefault();
   document.getElementById("modalMessage").textContent = "Mensagem enviada";
@@ -21,7 +20,7 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
   this.reset();
 });
 
-// Navegação suave
+
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
@@ -31,7 +30,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// Fechar modal ao clicar fora
+
 window.addEventListener("click", function (event) {
   const modal = document.getElementById("modal");
   if (event.target === modal) {
