@@ -15,7 +15,6 @@ body {
 }
 
 header {
-     padding: 0.5rem 0;
      width: 100%;
      top: 0;
      z-index: 1000;
@@ -69,7 +68,7 @@ header {
     align-items: center;
     justify-content: center;
     width: 70%;
-    padding: 4rem 4rem;
+    padding: 3rem 4rem;
 }
 
 .login-box {
@@ -91,7 +90,7 @@ h1 {
 }
 
 .form-group {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .form-group label {
@@ -157,6 +156,7 @@ h1 {
 }
 
 .btn {
+    margin-top: 1rem;
     width: 100%;
     background: transparent;
     color: #ffffff;
@@ -167,7 +167,7 @@ h1 {
     cursor: pointer;
     transition: all 0.3s;
     font-weight: 300;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .btn:hover {
