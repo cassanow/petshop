@@ -1,21 +1,23 @@
 document.getElementById("confirmar").addEventListener("click", async () => {
-    var nome = document.getElementById("nome");
-    var email = document.getElementById("email");
-    var telefone = document.getElementById("telefone");
-    var senha = document.getElementById("senha");
+    var nome = document.getElementById("nome").value;
+    var email = document.getElementById("email").value;
+    var telefone = document.getElementById("telefone").value;
+    var senha = document.getElementById("senha").value;
 
     try {
-        const response = await fetch("https://petzcare-api.onrender.com/api/auth/login", {
+        const response = await fetch("https://petzcare-api.onrender.com/api/Auth/register", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ nome: nome, email: email, telefone: telefone, senha: senha })
-
         })
 
-        const data = await response.JSON()
+        const data = await response.json()
 
-        if(response){
+        if(response.ok){
             console.log("sucesso", data)
+        }
+        else{
+            console.log("deu ruim", data)
         }
     }
     catch(err){
