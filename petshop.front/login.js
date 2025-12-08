@@ -9,7 +9,7 @@ document.getElementById("confirmar").addEventListener("click", async () => {
             body: JSON.stringify({ email: email, password: senha })
         })
 
-        const data = await response.json
+        const data = await response.json()
 
         if(response.ok){
             console.log("deu bom", data)
