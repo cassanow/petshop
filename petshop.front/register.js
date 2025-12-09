@@ -71,6 +71,6 @@ function mostrarErro(msg) {
         e.style.opacity = "0";
         setTimeout(() => {
             e.style.display = "none";
-        }, 300);
-    }, 3000);
+        }, 1000);
+    }, 10000);
 }
