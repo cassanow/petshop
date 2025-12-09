@@ -140,7 +140,7 @@
 
  .product-image img {
      border-radius: 5px;
-     width: 60%;
+     width: 40%;
      padding: 0;
  }
 
@@ -156,7 +156,7 @@
 
  .product-price {
      font-size: 1rem;
-     margin-bottom: 2rem;
+     margin-bottom: 1rem;
      opacity: 0.8;
  }
 
