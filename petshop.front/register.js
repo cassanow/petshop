@@ -44,20 +44,18 @@ document.getElementById("confirmar").addEventListener("click", async () => {
 
 })
 
-const traducoes = {
-    "The Name field is required.": "O nome é obrigatório.",
-    "The Email field is required.": "O e-mail é obrigatório.",
-    "The field Email is not a valid e-mail address.": "Formato de e-mail inválido.",
-    "The Telefone field is required.": "O telefone é obrigatório.",
-    "The field Telefone must be a string with a minimum length of 11 and a maximum length of 11.":
-        "O telefone deve ter exatamente 11 dígitos.",
-    "The Password field is required.": "A senha é obrigatória.",
-    "The field Password must be a string with a minimum length of 6.":
-        "A senha deve ter pelo menos 6 caracteres.",
-};
+
 
 function traduzirErro(msg) {
-    return traducoes[msg] || msg;
+    if (msg.includes("Name") && msg.includes("required")) return "O nome é obrigatório.";
+    if (msg.includes("Email") && msg.includes("required")) return "O e-mail é obrigatório.";
+    if (msg.includes("Email") && msg.includes("valid")) return "Formato de e-mail inválido.";
+    if (msg.includes("Telefone") && msg.includes("required")) return "O telefone é obrigatório.";
+    if (msg.includes("Telefone") && msg.includes("minimum length")) return "O telefone deve ter exatamente 11 dígitos.";
+    if (msg.includes("Password") && msg.includes("required")) return "A senha é obrigatória.";
+    if (msg.includes("Password") && msg.includes("minimum length")) return "A senha deve ter pelo menos 6 caracteres.";
+
+    return msg; 
 }
 
 function mostrarErro(listaErros) {
@@ -76,9 +74,9 @@ function mostrarErro(listaErros) {
     div.style.opacity = "1";
 
     setTimeout(() => {
-        e.style.opacity = "0";
+        div.style.opacity = "0";
         setTimeout(() => {
-            e.style.display = "none";
+            div.style.display = "none";
         }, 1000);
     }, 10000);
 }
