@@ -60,7 +60,7 @@ function traduzirErro(msg) {
     return traducoes[msg] || msg;
 }
 
-function mostrarErro(msg) {
+function mostrarErro(listaErros) {
    const div = document.getElementById("erro");
     div.innerHTML = ""; 
 
