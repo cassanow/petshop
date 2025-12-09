@@ -19,12 +19,12 @@ document.getElementById("confirmar").addEventListener("click", async () => {
         let erro = "Erro ao registrar.";
 
 
-        if (body.errors) {
-            erro = Object.values(body.errors)[0][0]; 
+        if (data.errors) {
+            erro = Object.values(data.errors)[0][0]; 
         }
 
-        if (body.message) {
-            erro = body.message;
+        if (data.message) {
+            erro = data.message;
         }
 
         mostrarErro(erro);
