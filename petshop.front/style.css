@@ -177,40 +177,8 @@
      border-color: #ffffff;
  }
 
- .form-group {
-     margin-bottom: 3rem;
- }
-
- .form-group label {
-     display: block;
-     margin-bottom: 1rem;
-     font-size: 0.7rem;
-     letter-spacing: 2px;
-     opacity: 0.8;
- }
-
- .form-group input,
- .form-group textarea {
-     width: 100%;
-     padding: 1.5rem 0;
-     border: none;
-     border-bottom: 1px solid #ffffff;
-     background: transparent;
-     color: #ffffff;
-     font-size: 1rem;
-     font-family: inherit;
-     font-weight: 300;
- }
-
- .form-group input:focus,
- .form-group textarea:focus {
-     outline: none;
-     border-bottom-color: #ffffff;
- }
-
- .form-group textarea {
-     resize: none;
-     min-height: 80px;
+ .contato{
+    padding: 4rem 20rem;
  }
 
  footer {
