@@ -19,16 +19,16 @@ document.getElementById("confirmar").addEventListener("click", async () => {
             let listaErros = [];
 
 
-            if (body.errors) {
-                for (const campo in body.errors) {
-                    body.errors[campo].forEach(msg => {
+            if (data.errors) {
+                for (const campo in data.errors) {
+                    data.errors[campo].forEach(msg => {
                         listaErros.push(traduzirErro(msg));
                     });
                 }
             }
 
-            if (body.message) {
-                listaErros.push(traduzirErro(body.message));
+            if (data.message) {
+                listaErros.push(traduzirErro(data.message));
             }
 
 
