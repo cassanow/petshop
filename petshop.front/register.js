@@ -61,7 +61,7 @@ function traduzirErro(msg) {
 }
 
 function mostrarErro(msg) {
-   const div = document.getElementById("erros");
+   const div = document.getElementById("erro");
     div.innerHTML = ""; 
 
 
