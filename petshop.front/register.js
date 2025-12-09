@@ -54,6 +54,7 @@ function traduzirErro(msg) {
     if (msg.includes("Telefone") && msg.includes("minimum length")) return "O telefone deve ter exatamente 11 dígitos.";
     if (msg.includes("Password") && msg.includes("required")) return "A senha é obrigatória.";
     if (msg.includes("Password") && msg.includes("minimum length")) return "A senha deve ter pelo menos 6 caracteres.";
+    if (msg.includes("Password") && msg.includes("maximum length")) return "A senha deve ter pelo menos 6 caracteres.";
 
     return msg; 
 }
