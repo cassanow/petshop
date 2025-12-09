@@ -36,7 +36,7 @@ document.getElementById("confirmar").addEventListener("click", async () => {
             return;
         }
 
-        window.location.href = "/login";
+        window.location.href = "/login.html";
     }
     catch (err) {
         console.log(err)
