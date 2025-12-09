@@ -11,12 +11,13 @@ document.getElementById("confirmar").addEventListener("click", async () => {
 
         const data = await response.json()
 
-        if(response.ok){
-            console.log("deu bom", data)
-        }
-        else{
+        if(response.status == 401){
+            document.getElementById("erro").style.display = "block";
             console.log("deu ruim", data)
+            return;
         }
+        
+        window.location.href = "/index.html"
     }
 
     catch(err){

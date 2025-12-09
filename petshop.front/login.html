@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="login.css">
-     <link rel="shortcut icon"  href="img/favicon.ico"/>
+    <link rel="shortcut icon" href="img/favicon.ico" />
 </head>
+
 <body>
     <header>
         <nav>
@@ -20,7 +22,7 @@
     <div class="container">
         <div class="section">
             <div class="login-box">
-                
+
                 <h1>Entrar</h1>
                 <p class="subtitle">Acesse sua conta</p>
 
@@ -43,6 +45,10 @@
                         <a href="#" class="forgot-link">Esqueceu a senha?</a>
                     </div>
 
+                    <p id="erro" style="color: #ff5555; margin-top: 10px; display:none;">
+                        E-mail ou senha incorretos.
+                    </p>
+
                     <button type="button" class="btn" id="confirmar">ENTRAR</button>
                 </form>
 
@@ -52,6 +58,7 @@
             </div>
         </div>
 
-    <script src="login.js"></script>
+        <script src="login.js"></script>
 </body>
+
 </html>
