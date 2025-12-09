@@ -20,7 +20,7 @@ document.getElementById("confirmar").addEventListener("click", async () => {
 
 
         if (data.errors) {
-            erro = Object.values(data.errors)[0][0]; 
+            erro = Object.values(data.errors); 
         }
 
         if (data.message) {
