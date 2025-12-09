@@ -61,11 +61,19 @@ function traduzirErro(msg) {
 }
 
 function mostrarErro(msg) {
-    const e = document.getElementById("erro");
+   const div = document.getElementById("erros");
+    div.innerHTML = ""; 
 
-    e.textContent = msg;
-    e.style.display = "block";
-    e.style.opacity = "1";
+
+    listaErros.forEach(msg => {
+        const p = document.createElement("p");
+        p.textContent = "• " + traduzirErro(msg);
+        p.style.margin = "4px 0";
+        div.appendChild(p);
+    });
+
+    div.style.display = "block";
+    div.style.opacity = "1";
 
     setTimeout(() => {
         e.style.opacity = "0";
