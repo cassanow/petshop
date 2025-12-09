@@ -12,7 +12,7 @@ document.getElementById("confirmar").addEventListener("click", async () => {
         const data = await response.json()
 
         if(response.status == 401){
-            document.getElementById("erro").style.display = "block";
+            mostrarErroMensage();
             console.log("deu ruim", data)
             return;
         }
@@ -25,3 +25,18 @@ document.getElementById("confirmar").addEventListener("click", async () => {
     }
     
 })
+
+function mostrarErroMensage() {
+    const erro = document.getElementById("erro");
+
+    erro.style.display = "block";     
+    erro.style.opacity = "1";         
+
+
+    setTimeout(() => {
+        erro.style.opacity = "0";      
+        setTimeout(() => {
+            erro.style.display = "none";
+        }, 300); 
+    }, 3000); 
+}
