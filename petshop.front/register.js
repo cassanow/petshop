@@ -11,17 +11,45 @@ document.getElementById("confirmar").addEventListener("click", async () => {
             body: JSON.stringify({ name: nome, email: email, telefone: telefone, password: senha })
         })
 
+
+
+        if(!response.ok){
         const data = await response.json()
 
-        if(response.ok){
-            console.log("sucesso", data)
+        let erro = "Erro ao registrar.";
+
+
+        if (body.errors) {
+            erro = Object.values(body.errors)[0][0]; 
         }
-        else{
-            console.log("deu ruim", data)
+
+        if (body.message) {
+            erro = body.message;
         }
+
+        mostrarErro(erro);
+        return;
+        }
+        
+        window.location.href = "/login";
     }
     catch(err){
         console.log(err)
     }
    
 })
+
+function mostrarErro(msg) {
+    const e = document.getElementById("erro");
+
+    e.textContent = msg;
+    e.style.display = "block";
+    e.style.opacity = "1";
+
+    setTimeout(() => {
+        e.style.opacity = "0";
+        setTimeout(() => {
+            e.style.display = "none";
+        }, 300);
+    }, 3000);
+}
