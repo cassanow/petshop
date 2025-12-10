@@ -23,7 +23,7 @@ document.getElementById("confirmar").addEventListener("click", async () => {
 
 
         const username = data.user && data.user.name ? data.user.name : email; 
-        localStorage.setItem('username', username);
+        localStorage.setItem('userName', username);
         
         window.location.href = "/index.html"
     }

@@ -38,29 +38,40 @@ window.addEventListener("click", function (event) {
   }
 });
 
-// Função principal para verificar o login e atualizar a navegação
-    function updateLoginLink() {
-        // Tenta buscar o nome do usuário no armazenamento local
-        const username = localStorage.getItem('username');
-        const loginListItem = document.getElementById('nav-login');
+// ------------------------------------------------------------------
+// 1. FUNÇÃO DE LOGOUT (Necessária para a função updateLoginLink)
+// ------------------------------------------------------------------
+function logoutUser() {
+    // Remove as chaves de autenticação
+    localStorage.removeItem('userToken');
+    localStorage.removeItem('userName'); 
+    // Recarrega a página
+    window.location.reload(); 
+}
+
+// ------------------------------------------------------------------
+// 2. NAVEGAÇÃO / LOGIN
+// ------------------------------------------------------------------
+function updateLoginLink() {
+    // A chave usada para buscar o nome deve ser 'userName'
+    const userName = localStorage.getItem('userName');
+    const loginListItem = document.getElementById('nav-login');
+    
+    if (userName && loginListItem) {
+        // Substitui o link LOGIN pelo nome do usuário
+        loginListItem.innerHTML = `<a href="#" id="user-name-link">${userName}</a>`;
+
+        // Adiciona um listener para o logout
+        const userLink = document.getElementById('user-name-link');
+        userLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            logoutUser();
+        });
         
-        // Se o nome existir E o elemento de login for encontrado
-        if (username && loginListItem) {
-            // 1. Substitui o link LOGIN pelo nome do usuário
-            loginListItem.innerHTML = `<a href="#" id="user-name-link">${username}</a>`;
-
-            // 2. Adiciona um link de LOGOUT ou redirecionamento no clique do nome
-            const userlink = document.getElementById('user-name-link');
-            userlink.addEventListener('click', function(e) {
-                e.preventDefault();
-                // Chama a função de deslogar
-                logoutUser();
-            });
-            
-            // Opcional: Adicionar um link de "Sair" ao lado do nome, se preferir
-            loginListItem.innerHTML += ` / <a href="#" onclick="logoutUser()">Sair</a>`;
-        }
+        // Se quiser a opção "Sair" ao lado, descomente a linha abaixo:
+        loginListItem.innerHTML += ` / <a href="#" onclick="logoutUser()">Sair</a>`; 
     }
+}
 
-    // Chama a função quando a página carregar
-    document.addEventListener('DOMContentLoaded', updateLoginLink);
+// Garante que a função é chamada assim que o HTML carregar
+document.addEventListener('DOMContentLoaded', updateLoginLink);
