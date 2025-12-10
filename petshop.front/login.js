@@ -41,7 +41,6 @@ document.getElementById("confirmar").addEventListener("click", async () => {
          localStorage.setItem("userName", data.user);
        }
 
-       localStorage.setItem("userRecentlyRegistered", JSON.stringify(data));
         window.location.href = "/index.html"
     }
 
