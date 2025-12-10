@@ -21,9 +21,9 @@ document.getElementById("confirmar").addEventListener("click", async () => {
         })
 
 
+        const data = await response.json()
 
         if (!response.ok) {
-            const data = await response.json()
 
             let listaErros = [];
 
