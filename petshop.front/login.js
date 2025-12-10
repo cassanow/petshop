@@ -6,6 +6,15 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+window.addEventListener("DOMContentLoaded", () => {
+
+
+    const novo = localStorage.getItem("userRecentlyRegistered");
+    if (novo) {
+        console.log("Usuário que acabou de registrar:", JSON.parse(novo));
+        localStorage.removeItem("userRecentlyRegistered");
+    }
+})
 
 
 document.getElementById("confirmar").addEventListener("click", async () => {
@@ -32,7 +41,7 @@ document.getElementById("confirmar").addEventListener("click", async () => {
          localStorage.setItem("userName", data.user);
        }
 
-        console.log("deu bom", data)
+       localStorage.setItem("userRecentlyRegistered", JSON.stringify(data));
         window.location.href = "/index.html"
     }
 
