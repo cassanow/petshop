@@ -17,9 +17,10 @@ document.getElementById("confirmar").addEventListener("click", async () => {
             return;
         }
 
-        if (data.token) {
-            localStorage.setItem('userToken', data.token);
-        }
+       if (data.token) {
+         localStorage.setItem("userToken", data.token);
+         localStorage.setItem("userName", data.user);
+       }
 
         window.location.href = "/index.html"
     }

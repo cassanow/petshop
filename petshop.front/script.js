@@ -38,3 +38,13 @@ window.addEventListener("click", function (event) {
   }
 });
 
+const nome = localStorage.getItem("userName");
+
+if (nome) {
+  const area = document.getElementById("nav-login");
+  if (area) {
+    area.innerText = nome;
+    area.href = "#";
+  }
+}
+
