@@ -16,6 +16,14 @@ document.getElementById("confirmar").addEventListener("click", async () => {
             console.log("deu ruim", data)
             return;
         }
+
+        if (data.token) {
+            localStorage.setItem('userToken', data.token);
+        }
+
+
+        const username = data.user && data.user.name ? data.user.name : email; 
+        localStorage.setItem('username', username);
         
         window.location.href = "/index.html"
     }
