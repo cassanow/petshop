@@ -128,42 +128,6 @@
      padding: 0;
  }
 
- .product-grid {
-     display: grid;
-     grid-template-columns: repeat(4, 1fr);
-     gap: 4rem;
- }
-
- .product-card {
-     background: transparent;
- }
-
- .product-image {
-     background: transparent;
- }
-
- .product-image img {
-     border-radius: 5px;
-     width: 40%;
-     padding: 0;
- }
-
- .product-info h3 {
-     font-size: 1rem;
-     margin-bottom: 0.5rem;
- }
-
- .product-info p {
-     font-size: 0.85rem;
-     margin-bottom: 1rem;
- }
-
- .product-price {
-     font-size: 1rem;
-     margin-bottom: 1rem;
-     opacity: 0.8;
- }
-
  .btn {
     margin-top: 10px;
      background: transparent;
