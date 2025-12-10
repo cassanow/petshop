@@ -21,10 +21,6 @@ document.getElementById("confirmar").addEventListener("click", async () => {
             localStorage.setItem('userToken', data.token);
         }
 
-
-        const username = data.user && data.user.name ? data.user.name : email; 
-        localStorage.setItem('userName', username);
-        
         window.location.href = "/index.html"
     }
 
