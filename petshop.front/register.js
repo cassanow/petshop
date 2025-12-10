@@ -45,6 +45,7 @@ document.getElementById("confirmar").addEventListener("click", async () => {
             return;
         }
 
+        console.log("deu bom", data)
         window.location.href = "/login.html";
     }
     catch (err) {

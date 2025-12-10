@@ -32,6 +32,7 @@ document.getElementById("confirmar").addEventListener("click", async () => {
          localStorage.setItem("userName", data.user);
        }
 
+        console.log("deu bom", data)
         window.location.href = "/index.html"
     }
 
