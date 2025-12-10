@@ -13,14 +13,6 @@ document.querySelector(".btn-close").addEventListener("click", function () {
 });
 
 
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-  document.getElementById("modalMessage").textContent = "Mensagem enviada";
-  document.getElementById("modal").style.display = "flex";
-  this.reset();
-});
-
-
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
