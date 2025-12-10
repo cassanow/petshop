@@ -1,3 +1,13 @@
+window.addEventListener("DOMContentLoaded", () => {
+    const token = localStorage.getItem("userToken");
+
+    if (token) {
+        window.location.href = "index.html";
+    }
+});
+
+
+
 document.getElementById("confirmar").addEventListener("click", async () => {
     var email = document.getElementById("email").value;
     var senha = document.getElementById("senha").value;
