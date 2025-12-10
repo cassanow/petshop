@@ -38,13 +38,15 @@ window.addEventListener("click", function (event) {
   }
 });
 
-const nome = localStorage.getItem("userName");
+window.addEventListener("DOMContentLoaded", () => {
+    const nome = localStorage.getItem("userName");
+    const token = localStorage.getItem("userToken");
 
-if (nome) {
-  const area = document.getElementById("nav-login");
-  if (area) {
-    area.innerText = nome;
-    area.href = "#";
-  }
-}
+    if (nome && token) {
+        const loginLink = document.getElementById("nav-login");
+        loginLink.textContent = nome;
+        loginLink.href = "#"; 
+    }
+});
+
 
